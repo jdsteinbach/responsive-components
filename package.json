@@ -1,0 +1,36 @@
+{
+  "name": "responsive-components",
+  "version": "1.0.1",
+  "description": "Responsive Components: CascadiaJS 2021 Slides",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "reveal",
+    "slides",
+    "reveal.js",
+    "responsive",
+    "components",
+    "CSS",
+    "JS"
+  ],
+  "author": "James Steinbach",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "autoprefixer": "^10.3.7",
+    "cssnano": "^5.0.8",
+    "markdown-it": "^12.2.0",
+    "markdown-it-highlightjs": "^3.5.0",
+    "postcss": "^8.3.9",
+    "sass": "^1.42.1"
+  },
+  "dependencies": {
+    "reveal.js": "^3.9.2"
+  }
+}

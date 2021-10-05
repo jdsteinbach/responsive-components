@@ -1,0 +1,87 @@
+$selectors: (
+  General-purpose: (
+    keyword,
+    built_in,
+    type,
+    literal,
+    number,
+    regexp,
+    string,
+    subst,
+    symbol,
+    class,
+    function,
+    title,
+    params
+  ),
+  Meta: (
+    comment,
+    doctag,
+    meta,
+    meta-keyword,
+    meta-string
+  ),
+  Tags-attributes-configs: (
+    section,
+    tag,
+    name,
+    builtin-name,
+    attr,
+    attribute,
+    variable
+  ),
+  Markup: (
+    bullet,
+    code,
+    emphasis,
+    strong,
+    formula,
+    link,
+    quote
+  ),
+  CSS: (
+    selector-tag,
+    selector-id,
+    selector-class,
+    selector-attr,
+    selector-pseudo
+  ),
+  Templates: (
+    template-tag,
+    template-variable
+  ),
+  diff: (
+    addition,
+    deletion
+  ),
+  ReasonML: (
+    operator,
+    pattern-match,
+    typing,
+    constructor,
+    module-access,
+    module
+  )
+);
+
+$selector-colors: (
+  General-purpose: $backgroundColor,
+  Meta: rgba($preColor, .6),
+  Tags-attributes-configs: rgba(#fff, .8),
+  Markup: rgba($backgroundColor, .8),
+  CSS: rgba($preColor, .8),
+  Templates: white,
+  diff: rgba($backgroundColor, .6),
+  ReasonML: $preColor
+);
+
+@each $category, $category-values in $selectors {
+  $names: ();
+  @each $selector in $category-values {
+    $names: append($names, ".hljs-#{$selector}", comma);
+  }
+
+  #{$names} {
+    color: map-get($selector-colors, $category);
+  }
+}

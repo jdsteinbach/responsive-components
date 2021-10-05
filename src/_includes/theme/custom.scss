@@ -1,0 +1,204 @@
+@use "sass:math";
+
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Solarized colors
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #17C37B;
+
+$mainColor: #112378;
+$headingColor: $mainColor;
+
+$preColor: #FFD007;
+
+$mainFontSize: 40px;
+$mainFont: 'canada-type-gibson', Helvetica, sans-serif;
+$headingFont: 'mono45-headline', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 700;
+$linkColor: #112378;
+$linkColorHover: #0033FF;
+$selectionBackgroundColor: lighten($linkColor, 25%);
+$codeFont: 'ibm-plex-mono', Operator Mono, monospace;
+
+$heading1Size: 4.1em;
+$heading2Size: 2.56em;
+$heading3Size: 1.6em;
+$heading4Size: 1.6em;
+$heading5Size: 1em;
+$heading6Size: 1em;
+
+body {
+  font-feature-settings: "liga";
+}
+
+section.has-light-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #222;
+	}
+}
+
+.reveal {
+  section {
+    h2, h2, h4, h5, h6 {
+      font-family: $codeFont;
+      text-transform: none;
+      font-weight: 800;
+
+      + p {
+        margin-top: $heading2Size;
+      }
+    }
+
+    h2 + h3 {
+      font-family: $mainFont;
+      text-transform: none;
+      font-weight: 400;
+    }
+
+    h2 .h1 {
+      margin-bottom: .125em;
+      padding-bottom: .125em;
+      display: block;
+      font-family: $headingFont;
+      font-size: 1.6em;
+      border-bottom: .15em solid currentColor;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      em {
+        font-style: italic;
+        border-bottom: .125em solid currentColor;
+      }
+    }
+
+    a {
+      &,
+      &:hover,
+      &:active {
+        text-decoration: underline !important;
+      }
+    }
+
+    code {
+      font-size: 0.9em;
+    }
+
+    pre {
+      display: inline-block;
+      width: auto;
+      padding: 1ch;
+      box-sizing: border-box;
+      background-color: $mainColor;
+      color: $preColor;
+
+      code {
+        max-height: 100%;
+        box-sizing: border-box;
+        font-size: $mainFontSize;
+        line-height: 1.2;
+        overflow-x: scroll;
+        overflow-y: visible;
+      }
+
+      mark {
+        padding: 0 .25em;
+        font-weight: 800;
+        color: #fff;
+        background-color: rgba(#000, .2);
+      }
+    }
+
+    ul,
+    ol {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 40rem;
+    }
+
+    p {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 40rem;
+
+      &:first-child:last-child {
+        font-size: $heading3Size;
+      }
+    }
+
+    i, em {
+      font-style: italic;
+    }
+
+    b, strong {
+      font-weight: bold;
+    }
+
+    .sr-only {
+      position: absolute;
+			height: 1px;
+			width: 1px;
+			overflow: hidden;
+			clip: rect( 1px, 1px, 1px, 1px );
+    }
+
+    .link {
+      margin-left: 0.25em;
+      padding: 0.125em;
+      display: inline-flex;
+      align-items: center;
+      border-radius: .125em;
+      background-color: rgba($backgroundColor, .25);
+
+      &:hover,
+      &:active {
+        background-color: rgba($linkColorHover, .15);
+      }
+    }
+
+    .link__icon {
+      width: 0.8em;
+      height: 0.8em;
+    }
+  }
+
+  @import "auth0-logo";
+  @import "code";
+  @import "colophon";
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
