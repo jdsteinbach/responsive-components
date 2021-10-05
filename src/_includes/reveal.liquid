@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>{{ slides.title }}</title>
+    <meta name="description" content="{{ slides.description }}">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/custom.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
+
+    <link rel="stylesheet" href="https://use.typekit.net/pzu4dhu.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window
+        .location
+        .search
+        .match(/print-pdf/gi)
+          ? 'css/print/pdf.css'
+          : 'css/print/paper.css';
+      document
+        .getElementsByTagName('head')[0]
+        .appendChild(link);
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        {% for slide in collections.slides %}
+          {% include _section %}
+        {% endfor %}
+      </div>
+
+      <footer class="colophon">
+        <div class="colophon__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50.18" height="56" viewBox="0 0 50.18 56" focusable="false" aria-label="CascadiaJS 2020">
+            <rect width="50.18" height="56" fill="#17C37B" />
+            <path d="M25.09 13.88l4.98 4.98 1.25-1.24-6.23-6.23-6.23 6.23 1.25 1.24 4.98-4.98z"/>
+            <path d="M25.09 18.86l8.72 8.72 1.24-1.24-9.96-9.96-9.96 9.96 1.25 1.24 8.71-8.72z"/>
+            <path d="M25.09 23.85L37.54 36.3l1.25-1.25-13.7-13.69-13.7 13.69 1.25 1.25z"/>
+            <path d="M15.13 36.3l1.25 1.24 8.71-8.71 8.72 8.71 1.24-1.24-9.96-9.96-9.96 9.96z"/>
+            <path d="M48.29 0H0v56h50.18V0zm0 54.1H26V34.67l4.11 4.12 1.25-1.25-6.23-6.22-6.23 6.22 1.25 1.25 4.05-4.09v19.4H1.9V1.9h46.39z"/>
+          </svg>
+        </div>
+
+        <a href="https://jdsteinbach.com/a11y-modal-slides/#/" class="colophon__link">jds.li/a11y-modal</a>
+      </footer>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        height: 600,
+        width: 1200,
+        hash: true,
+        dependencies: [
+          {
+            src: 'plugin/notes/notes.js',
+            async: true
+          }
+        ],
+        transition: 'fade'
+      });
+    </script>
+  </body>
+</html>

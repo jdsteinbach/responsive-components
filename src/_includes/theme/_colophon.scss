@@ -1,0 +1,35 @@
+.colophon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 15vw;
+  }
+}
+
+.colophon__logo {
+  width: 15vw;
+
+  svg {
+    height: 8vh;
+    width: auto;
+    fill: $mainColor;
+  }
+}
+
+.colophon__link {
+  padding: .5em 1em .7em;
+  opacity: .75;
+  font-family: $codeFont;
+  font-style: italic;
+  font-size: math.div(1em, 1.5);
+  background-color: $backgroundColor;
+}
