@@ -2,7 +2,11 @@
   "name": "responsive-components",
   "version": "1.0.1",
   "description": "Responsive Components: CascadiaJS 2021 Slides",
-  "main": "index.js",
+  "main": ".eleventy.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdsteinbach/responsive-components"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "eleventy --serve",
@@ -21,6 +25,10 @@
   ],
   "author": "James Steinbach",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdsteinbach/responsive-components/issues"
+  },
+  "homepage": "https://github.com/jdsteinbach/responsive-components#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^10.3.7",
