@@ -8,6 +8,15 @@ const mdOptions = {
   typographer: true
 }
 
+const pathToInt = path => {
+  const ints = path.match(/\d+/g)
+  const fileValue = parseInt(ints.pop(), 10)
+  const folderValue = parseInt(ints.pop(), 10)
+  const pathInt = fileValue + folderValue * 1000
+
+  return pathInt
+}
+
 module.exports = eleventyConfig => {
   eleventyConfig.addCollection('slides', collection => {
     return collection
@@ -16,7 +25,7 @@ module.exports = eleventyConfig => {
         return page.inputPath.match(/^\.\/src\/slides/) !== null
       })
       .sort((a, b) => {
-        return a.inputPath < b.inputPath ? -1 : 1;
+        return pathToInt(a.inputPath) < pathToInt(b.inputPath) ? -1 : 1;
       });
   });
 

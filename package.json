@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "DEBUG=Eleventy* eleventy --serve",
     "start": "eleventy --serve",
     "build": "eleventy"
   },

@@ -1,0 +1,41 @@
+.credit {
+  margin-top: 1.6em;
+  display: inline-grid;
+  grid-template:
+    "before l1 after" auto
+    "before l2 after" auto /
+    auto 1fr auto;
+  align-items: center;
+  justify-content: center;
+  perspective: 1.6em;
+
+  &::before,
+  &::after {
+    content: "☰";
+    display: inline-block;
+    transform-style: preserve-3d;
+    animation: credit 2s infinite alternate;
+  }
+
+  &::before {
+    grid-area: before;
+    transform: translate(-.5em, -.125em) scaleY(4) rotateY(-45deg) scale(.5);
+  }
+
+  &::after {
+    grid-area: after;
+    transform: translate(.5em, -.125em) scaleY(4) rotateY(45deg) scale(.5);
+  }
+
+  strong:first-of-type {
+    grid-area: l1;
+  }
+
+  strong:last-of-type {
+    grid-area: l2;
+  }
+}
+
+@keyframes credit {
+  to { opacity: .5; }
+}
