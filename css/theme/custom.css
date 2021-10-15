@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Black theme for reveal.js. This is the opposite of the 'white' theme.
  *
@@ -11,18 +12,31 @@ section.has-light-background, section.has-light-background h1, section.has-light
   color: #222;
 }
 
-.reveal section h2, .reveal section h2, .reveal section h4, .reveal section h5, .reveal section h6 {
-  font-family: "ibm-plex-mono", Operator Mono, monospace;
-  text-transform: none;
+.reveal section h2, .reveal section h3, .reveal section h4, .reveal section h5, .reveal section h6 {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 60rem;
   font-weight: 800;
 }
-.reveal section h2 + p, .reveal section h2 + p, .reveal section h4 + p, .reveal section h5 + p, .reveal section h6 + p {
-  margin-top: 2.56em;
+.reveal section h2 + p,
+.reveal section h2 + ul, .reveal section h3 + p,
+.reveal section h3 + ul, .reveal section h4 + p,
+.reveal section h4 + ul, .reveal section h5 + p,
+.reveal section h5 + ul, .reveal section h6 + p,
+.reveal section h6 + ul {
+  margin-top: 1em;
+}
+.reveal section h2, .reveal section h4, .reveal section h6 {
+  font-family: "ibm-plex-mono", Operator Mono, monospace;
+  text-transform: none;
 }
 .reveal section h2 + h3 {
   font-family: "canada-type-gibson", Helvetica, sans-serif;
   text-transform: none;
   font-weight: 400;
+}
+.reveal section h3:first-child:last-child {
+  font-size: 2.4em;
 }
 .reveal section h2 .h1 {
   margin-bottom: 0.125em;
@@ -46,6 +60,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   display: inline-block;
   width: auto;
   padding: 1ch;
+  border-radius: 0.25ch;
   box-sizing: border-box;
   background-color: #112378;
   color: #FFD007;
@@ -53,7 +68,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal section pre code {
   max-height: 100%;
   box-sizing: border-box;
-  font-size: 40px;
+  font-size: 33.3333333333px;
   line-height: 1.2;
   overflow-x: scroll;
   overflow-y: visible;
@@ -64,19 +79,33 @@ section.has-light-background, section.has-light-background h1, section.has-light
   color: #fff;
   background-color: rgba(0, 0, 0, 0.2);
 }
+.reveal section .small-code + pre code {
+  font-size: 22.8571428571px;
+}
+.reveal section .small-code + pre code,
+.reveal section pre:first-child:only-of-type {
+  padding: 0;
+  border-radius: 0;
+  box-shadow: 0 0 0 50vmax #112378;
+}
 .reveal section ul,
 .reveal section ol {
   margin-right: auto;
   margin-left: auto;
-  max-width: 40rem;
+  max-width: 45rem;
 }
 .reveal section p {
   margin-right: auto;
   margin-left: auto;
-  max-width: 40rem;
+  max-width: 45rem;
 }
 .reveal section p:first-child:last-child {
-  font-size: 1.6em;
+  font-size: 2em;
+}
+.reveal section blockquote {
+  padding: 2em;
+  background-color: #FFD007;
+  box-shadow: none;
 }
 .reveal section i, .reveal section em {
   font-style: italic;
@@ -113,16 +142,16 @@ section.has-light-background, section.has-light-background h1, section.has-light
   vertical-align: middle;
   fill: currentColor;
 }
-.reveal .hljs-keyword, .reveal .hljs-built_in, .reveal .hljs-type, .reveal .hljs-literal, .reveal .hljs-number, .reveal .hljs-regexp, .reveal .hljs-string, .reveal .hljs-subst, .reveal .hljs-symbol, .reveal .hljs-class, .reveal .hljs-function, .reveal .hljs-title, .reveal .hljs-params {
+.reveal .hljs-keyword, .reveal .hljs-built_in, .reveal .hljs-type, .reveal .hljs-literal, .reveal .hljs-number, .reveal .hljs-regexp, .reveal .hljs-string, .reveal .hljs-subst, .reveal .hljs-symbol, .reveal .hljs-class, .reveal .hljs-function, .reveal .hljs-title, .reveal .hljs-params, .reveal .hljs-name {
   color: #17C37B;
 }
 .reveal .hljs-comment, .reveal .hljs-doctag, .reveal .hljs-meta, .reveal .hljs-meta-keyword, .reveal .hljs-meta-string {
   color: rgba(255, 208, 7, 0.6);
 }
-.reveal .hljs-section, .reveal .hljs-tag, .reveal .hljs-name, .reveal .hljs-builtin-name, .reveal .hljs-attr, .reveal .hljs-attribute, .reveal .hljs-variable {
+.reveal .hljs-section, .reveal .hljs-tag, .reveal .hljs-builtin-name, .reveal .hljs-attribute, .reveal .hljs-variable {
   color: rgba(255, 255, 255, 0.8);
 }
-.reveal .hljs-bullet, .reveal .hljs-code, .reveal .hljs-emphasis, .reveal .hljs-strong, .reveal .hljs-formula, .reveal .hljs-link, .reveal .hljs-quote {
+.reveal .hljs-bullet, .reveal .hljs-code, .reveal .hljs-emphasis, .reveal .hljs-strong, .reveal .hljs-formula, .reveal .hljs-link, .reveal .hljs-quote, .reveal .hljs-attr {
   color: rgba(23, 195, 123, 0.8);
 }
 .reveal .hljs-selector-tag, .reveal .hljs-selector-id, .reveal .hljs-selector-class, .reveal .hljs-selector-attr, .reveal .hljs-selector-pseudo {
@@ -167,6 +196,94 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-style: italic;
   font-size: 0.6666666667em;
   background-color: #17C37B;
+}
+.reveal .credit {
+  margin-top: 1.6em;
+  display: inline-grid;
+  grid-template: "before l1 after" auto "before l2 after" auto/auto 1fr auto;
+  align-items: center;
+  justify-content: center;
+  perspective: 1.6em;
+}
+.reveal .credit::before, .reveal .credit::after {
+  content: "☰";
+  display: inline-block;
+  transform-style: preserve-3d;
+  -webkit-animation: credit 2s infinite alternate;
+          animation: credit 2s infinite alternate;
+}
+.reveal .credit::before {
+  grid-area: before;
+  transform: translate(-0.5em, -0.125em) scaleY(4) rotateY(-45deg) scale(0.5);
+}
+.reveal .credit::after {
+  grid-area: after;
+  transform: translate(0.5em, -0.125em) scaleY(4) rotateY(45deg) scale(0.5);
+}
+.reveal .credit strong:first-of-type {
+  grid-area: l1;
+}
+.reveal .credit strong:last-of-type {
+  grid-area: l2;
+}
+@-webkit-keyframes credit {
+  to {
+    opacity: 0.5;
+  }
+}
+@keyframes credit {
+  to {
+    opacity: 0.5;
+  }
+}
+.reveal .slide-background-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reveal [data-src*=rNzVEGp],
+.reveal [data-src*=RwZPzJb],
+.reveal [data-src*=ExvPZjW] {
+  -webkit-animation: width 5s steps(4) infinite alternate;
+          animation: width 5s steps(4) infinite alternate;
+}
+@-webkit-keyframes width {
+  from {
+    width: 100vw;
+  }
+  to {
+    width: 30vw;
+  }
+}
+@keyframes width {
+  from {
+    width: 100vw;
+  }
+  to {
+    width: 30vw;
+  }
+}
+.reveal .noper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  transform: scale(0);
+  transition-duration: 1s !important;
+  transition-timing-function: cubic-bezier(1, 0.5, 0.75, 1.25) !important;
+}
+.reveal .noper.visible {
+  transform: scale(1);
+}
+.reveal .noper svg {
+  height: 50vmin;
+  width: 50vmin;
+  display: block;
 }
 
 /*********************************************
@@ -229,15 +346,15 @@ body {
 }
 
 .reveal h1 {
-  font-size: 4.1em;
+  font-size: 3.6em;
 }
 
 .reveal h2 {
-  font-size: 2.56em;
+  font-size: 2.4em;
 }
 
 .reveal h3 {
-  font-size: 1.6em;
+  font-size: 2em;
 }
 
 .reveal h4 {
