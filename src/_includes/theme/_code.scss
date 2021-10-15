@@ -12,23 +12,22 @@ $selectors: (
     class,
     function,
     title,
-    params
+    params,
+    name,
   ),
   Meta: (
     comment,
     doctag,
     meta,
     meta-keyword,
-    meta-string
+    meta-string,
   ),
   Tags-attributes-configs: (
     section,
     tag,
-    name,
     builtin-name,
-    attr,
     attribute,
-    variable
+    variable,
   ),
   Markup: (
     bullet,
@@ -37,22 +36,23 @@ $selectors: (
     strong,
     formula,
     link,
-    quote
+    quote,
+    attr,
   ),
   CSS: (
     selector-tag,
     selector-id,
     selector-class,
     selector-attr,
-    selector-pseudo
+    selector-pseudo,
   ),
   Templates: (
     template-tag,
-    template-variable
+    template-variable,
   ),
   diff: (
     addition,
-    deletion
+    deletion,
   ),
   ReasonML: (
     operator,
@@ -60,7 +60,7 @@ $selectors: (
     typing,
     constructor,
     module-access,
-    module
+    module,
   )
 );
 

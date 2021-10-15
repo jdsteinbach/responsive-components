@@ -52,9 +52,9 @@ $linkColorHover: #0033FF;
 $selectionBackgroundColor: lighten($linkColor, 25%);
 $codeFont: 'ibm-plex-mono', Operator Mono, monospace;
 
-$heading1Size: 4.1em;
-$heading2Size: 2.56em;
-$heading3Size: 1.6em;
+$heading1Size: 3.6em;
+$heading2Size: 2.4em;
+$heading3Size: 2em;
 $heading4Size: 1.6em;
 $heading5Size: 1em;
 $heading6Size: 1em;
@@ -71,20 +71,31 @@ section.has-light-background {
 
 .reveal {
   section {
-    h2, h2, h4, h5, h6 {
-      font-family: $codeFont;
-      text-transform: none;
+    h2, h3, h4, h5, h6 {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 60rem;
       font-weight: 800;
 
-      + p {
-        margin-top: $heading2Size;
+      + p,
+      + ul {
+        margin-top: $heading5Size;
       }
+    }
+
+    h2, h4, h6 {
+      font-family: $codeFont;
+      text-transform: none;
     }
 
     h2 + h3 {
       font-family: $mainFont;
       text-transform: none;
       font-weight: 400;
+    }
+
+    h3:first-child:last-child {
+      font-size: $heading2Size;
     }
 
     h2 .h1 {
@@ -119,6 +130,7 @@ section.has-light-background {
       display: inline-block;
       width: auto;
       padding: 1ch;
+      border-radius: .25ch;
       box-sizing: border-box;
       background-color: $mainColor;
       color: $preColor;
@@ -126,7 +138,7 @@ section.has-light-background {
       code {
         max-height: 100%;
         box-sizing: border-box;
-        font-size: $mainFontSize;
+        font-size:  math.div($mainFontSize, 1.2);
         line-height: 1.2;
         overflow-x: scroll;
         overflow-y: visible;
@@ -140,21 +152,38 @@ section.has-light-background {
       }
     }
 
+    .small-code + pre code {
+      font-size: math.div($mainFontSize, 1.75);
+    }
+
+    .small-code + pre code,
+    pre:first-child:only-of-type {
+      padding: 0;
+      border-radius: 0;
+      box-shadow: 0 0 0 50vmax $mainColor;
+    }
+
     ul,
     ol {
       margin-right: auto;
       margin-left: auto;
-      max-width: 40rem;
+      max-width: 45rem;
     }
 
     p {
       margin-right: auto;
       margin-left: auto;
-      max-width: 40rem;
+      max-width: 45rem;
 
       &:first-child:last-child {
         font-size: $heading3Size;
       }
+    }
+
+    blockquote {
+      padding: $heading3Size;
+      background-color: $preColor;
+      box-shadow: none;
     }
 
     i, em {
@@ -196,6 +225,9 @@ section.has-light-background {
   @import "auth0-logo";
   @import "code";
   @import "colophon";
+  @import "credit";
+  @import "misc";
+  @import "noper";
 }
 
 

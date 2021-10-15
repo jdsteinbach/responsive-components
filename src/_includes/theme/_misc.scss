@@ -1,0 +1,16 @@
+.slide-background-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-src*="rNzVEGp"],
+[data-src*="RwZPzJb"],
+[data-src*="ExvPZjW"] {
+  animation: width 5s steps(4) infinite alternate;
+}
+
+@keyframes width {
+  from { width: 100vw; }
+  to { width: 30vw; }
+}

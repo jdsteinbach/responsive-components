@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/custom.css">
 
-    <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="lib/css/monokai.css">
-
     <link rel="stylesheet" href="https://use.typekit.net/pzu4dhu.css">
 
     <!-- Printing and PDF exports -->
@@ -36,7 +33,7 @@
     <div class="reveal">
       <div class="slides">
         {% for slide in collections.slides %}
-          {% include _section %}
+          {% include "_section" %}
         {% endfor %}
       </div>
 
@@ -52,7 +49,7 @@
           </svg>
         </div>
 
-        <a href="https://jdsteinbach.com/a11y-modal-slides/#/" class="colophon__link">jds.li/a11y-modal</a>
+        <a href="{{ slides.public_url }}" class="colophon__link">{{ slides.short_url }}</a>
       </footer>
     </div>
 
@@ -63,15 +60,9 @@
       // - https://github.com/hakimel/reveal.js#configuration
       // - https://github.com/hakimel/reveal.js#dependencies
       Reveal.initialize({
-        height: 600,
+        height: 900,
         width: 1200,
         hash: true,
-        dependencies: [
-          {
-            src: 'plugin/notes/notes.js',
-            async: true
-          }
-        ],
         transition: 'fade'
       });
     </script>
