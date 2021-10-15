@@ -4,7 +4,7 @@ const ro = new ResizeObserver(entries => {
     const size = Array.isArray(e.borderBoxSize)
       ? e.borderBoxSize[0]
       : e.borderBoxSize;
-    cosnt action = (size.inlineSize >= 480)
+    const action = (size.inlineSize >= 480)
       ? 'add'
       : 'remove';
     e.target.classList[action]('wide');
