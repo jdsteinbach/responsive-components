@@ -1,66 +1,116 @@
+// $selectors: (
+//   General-purpose: (
+//     keyword,
+//     built_in,
+//     type,
+//     literal,
+//     number,
+//     regexp,
+//     string,
+//     subst,
+//     symbol,
+//     class,
+//     function,
+//     title,
+//     params,
+//     name,
+//   ),
+//   Meta: (
+//     comment,
+//     doctag,
+//     meta,
+//     meta-keyword,
+//     meta-string,
+//   ),
+//   Tags-attributes-configs: (
+//     section,
+//     tag,
+//     builtin-name,
+//     attribute,
+//     variable,
+//   ),
+//   Markup: (
+//     bullet,
+//     code,
+//     emphasis,
+//     strong,
+//     formula,
+//     link,
+//     quote,
+//     attr,
+//   ),
+//   CSS: (
+//     selector-tag,
+//     selector-id,
+//     selector-class,
+//     selector-attr,
+//     selector-pseudo,
+//   ),
+//   Templates: (
+//     template-tag,
+//     template-variable,
+//   ),
+//   diff: (
+//     addition,
+//     deletion,
+//   ),
+//   ReasonML: (
+//     operator,
+//     pattern-match,
+//     typing,
+//     constructor,
+//     module-access,
+//     module,
+//   )
+
 $selectors: (
   General-purpose: (
-    keyword,
-    built_in,
-    type,
-    literal,
-    number,
-    regexp,
-    string,
-    subst,
-    symbol,
+    selector,
+    "pseudo-element",
+    "pseudo-class",
     class,
     function,
-    title,
-    params,
-    name,
+    "class-name",
+    punctuation,
+    hashbang,
   ),
   Meta: (
     comment,
-    doctag,
-    meta,
-    meta-keyword,
-    meta-string,
+    id,
   ),
   Tags-attributes-configs: (
-    section,
-    tag,
-    builtin-name,
     attribute,
-    variable,
+    property,
+    keyword,
+    hexcode,
+    color,
+    entity,
   ),
   Markup: (
-    bullet,
-    code,
-    emphasis,
-    strong,
-    formula,
-    link,
-    quote,
-    attr,
+    important,
+    atrule,
+    number,
+    parameter,
+    "literal-property",
+    "n-th",
+    unit,
   ),
   CSS: (
-    selector-tag,
-    selector-id,
-    selector-class,
-    selector-attr,
-    selector-pseudo,
+    string,
+    "template-string",
+    operator,
+    combinator,
+    "function-variable",
   ),
   Templates: (
-    template-tag,
-    template-variable,
+    url,
+    "string-property"
   ),
   diff: (
-    addition,
-    deletion,
+    regex,
   ),
   ReasonML: (
-    operator,
-    pattern-match,
-    typing,
-    constructor,
-    module-access,
-    module,
+    constant,
   )
 );
 
@@ -78,7 +128,7 @@ $selector-colors: (
 @each $category, $category-values in $selectors {
   $names: ();
   @each $selector in $category-values {
-    $names: append($names, ".hljs-#{$selector}", comma);
+    $names: append($names, ".token.#{$selector}", comma);
   }
 
   #{$names} {
