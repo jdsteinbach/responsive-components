@@ -71,25 +71,7 @@
 
         
           <section >
-  <pre><code class="hljs language-css"><span class="hljs-selector-class">.widget</span> {
-  <span class="hljs-comment">/* narrow 1col layout: narrow version CSS */</span>
-}
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">480px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">959px</span>) {
-  <span class="hljs-selector-class">.widget</span> {
-    <span class="hljs-comment">/* wide 1col layout: wide version CSS */</span>
-  }
-}
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">960px</span>) <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">1199px</span>) {
-  <span class="hljs-selector-class">.widget</span> {
-    <span class="hljs-comment">/* narrow 2col layout: narrow version CSS */</span>
-  }
-}
-<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1200px</span>) {
-  <span class="hljs-selector-class">.widget</span> {
-    <span class="hljs-comment">/* wide 2col layout: wide version CSS */</span>
-  }
-}
-</code></pre>
+  <pre class="language-css"><code class="language-css"><span class="token selector">.widget</span> <span class="token punctuation">{</span><br>  <span class="token comment">/* narrow 1col layout: narrow version CSS */</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 480px<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 959px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>  <span class="token selector">.widget</span> <span class="token punctuation">{</span><br>    <span class="token comment">/* wide 1col layout: wide version CSS */</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 960px<span class="token punctuation">)</span> <span class="token keyword">and</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 1199px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>  <span class="token selector">.widget</span> <span class="token punctuation">{</span><br>    <span class="token comment">/* narrow 2col layout: narrow version CSS */</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 1200px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>  <span class="token selector">.widget</span> <span class="token punctuation">{</span><br>    <span class="token comment">/* wide 2col layout: wide version CSS */</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <div class="fragment noper">
   <svg role="presentation" aria-label="Nope" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" focusable="false">
     <circle stroke="red" stroke-width="2" fill="none" cy="8" cx="8" r="7"/>
@@ -101,14 +83,7 @@
 
         
           <section >
-  <pre><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;page-content&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;widget&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-name">aside</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;page-sidebar&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;widget&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
-</code></pre>
+  <pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>widget<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span><br><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-sidebar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>widget<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span></code></pre>
 
 </section>
 
@@ -150,6 +125,12 @@
 </section>
 
         
+          <section >
+  <pre class="language-css"><code class="language-css"><span class="token selector">.parent</span> <span class="token punctuation">{</span><br>  <span class="token property">--container-width</span><span class="token punctuation">:</span> 720px<span class="token punctuation">;</span><br><br>  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><br>  <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.child</span> <span class="token punctuation">{</span><br>  <span class="token property">flex-grow</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span><br>  <span class="token property">flex-basis</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--container-width<span class="token punctuation">)</span> - 100%<span class="token punctuation">)</span> * 999<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+
+</section>
+
+        
           <section data-background-iframe="https://codepen.io/jdsteinbach/embed/rNzVEGp">
   
 </section>
@@ -157,8 +138,9 @@
         
           <section >
   <h4>CSS Grid</h4>
+<pre class="language-css"><code class="language-css"><span class="token selector">.grid</span> <span class="token punctuation">{</span><br>  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span><br>  <span class="token property">grid-template-columns</span><span class="token punctuation">:</span><br>    <span class="token function">repeat</span><span class="token punctuation">(</span>auto-fit<span class="token punctuation">,</span> <span class="token function">minmax</span><span class="token punctuation">(</span>200px<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 <ul>
-<li>Uses <code>repeat(auto-fit, minmax($width, 1fr))</code> for editing column count based on child <code>$width</code></li>
+<li>Adapts column count for child width</li>
 <li>Sources: <a href="https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/">Juan Martín García</a>, <a href="https://archive.hankchizljaw.com/wrote/create-a-responsive-grid-layout-with-no-media-queries-using-css-grid/">Andy Bell</a></li>
 </ul>
 
@@ -198,19 +180,7 @@
 
         
           <section >
-  <pre><code class="hljs language-js"><span class="hljs-keyword">const</span> ro = <span class="hljs-keyword">new</span> ResizeObserver(<span class="hljs-function"><span class="hljs-params">entries</span> =&gt;</span> {
-  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> e <span class="hljs-keyword">of</span> entries) {
-    <span class="hljs-keyword">const</span> size = <span class="hljs-built_in">Array</span>.isArray(e.borderBoxSize)
-      ? e.borderBoxSize[<span class="hljs-number">0</span>]
-      : e.borderBoxSize;
-    <span class="hljs-keyword">const</span> action = (size.inlineSize &gt;= <span class="hljs-number">480</span>)
-      ? <span class="hljs-string">&#x27;add&#x27;</span>
-      : <span class="hljs-string">&#x27;remove&#x27;</span>;
-    e.target.classList[action](<span class="hljs-string">&#x27;wide&#x27;</span>);
-  }
-});
-ro.observe(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&#x27;box&#x27;</span>));
-</code></pre>
+  <pre class="language-js"><code class="language-js"><span class="token keyword">const</span> ro <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ResizeObserver</span><span class="token punctuation">(</span><span class="token parameter">entries</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> e <span class="token keyword">of</span> entries<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>    <span class="token keyword">const</span> size <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>borderBoxSize<span class="token punctuation">)</span><br>      <span class="token operator">?</span> e<span class="token punctuation">.</span>borderBoxSize<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><br>      <span class="token operator">:</span> e<span class="token punctuation">.</span>borderBoxSize<span class="token punctuation">;</span><br>    <span class="token keyword">const</span> action <span class="token operator">=</span> <span class="token punctuation">(</span>size<span class="token punctuation">.</span>inlineSize <span class="token operator">>=</span> <span class="token number">480</span><span class="token punctuation">)</span><br>      <span class="token operator">?</span> <span class="token string">'add'</span><br>      <span class="token operator">:</span> <span class="token string">'remove'</span><span class="token punctuation">;</span><br>    e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>classList<span class="token punctuation">[</span>action<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'wide'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>ro<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'box'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
 </section>
 
@@ -227,11 +197,17 @@ ro.observe(<span class="hljs-built_in">document</span>.getElementById(<span clas
 
         
           <section >
-  <h4>Avoid Memory Leaks</h4>
-<pre><code class="hljs language-js">ro.observe(el)
+  <h4><code>ResizeObserver</code> polyfill</h4>
+<ul>
+<li><a href="https://github.com/juggle/resize-observer">polyfill</a></li>
+</ul>
 
-ro.unobserve(el)
-</code></pre>
+</section>
+
+        
+          <section >
+  <h4>Avoid Memory Leaks</h4>
+<pre class="language-js"><code class="language-js">ro<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span><br><br>ro<span class="token punctuation">.</span><span class="token function">unobserve</span><span class="token punctuation">(</span>el<span class="token punctuation">)</span></code></pre>
 
 </section>
 
@@ -255,14 +231,7 @@ ro.unobserve(el)
         
           <section >
   <h3>But Loops…</h3>
-<pre><code class="hljs language-scss"><span class="hljs-selector-class">.element</span> {
-  <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
-}
-
-<span class="hljs-selector-class">.element</span>:query(min-width: <span class="hljs-number">300px</span>) {
-  width: <span class="hljs-number">200px</span>;
-}
-</code></pre>
+<pre class="language-scss"><code class="language-scss"><span class="token selector">.element </span><span class="token punctuation">{</span><br>  <span class="token property">width</span><span class="token punctuation">:</span> 400px<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br>.<span class="token property">element</span><span class="token punctuation">:</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 
 </section>
 
@@ -276,12 +245,7 @@ ro.unobserve(el)
         
           <section >
   <h4>1. Create a Container</h4>
-<pre><code class="hljs language-css"><span class="hljs-selector-class">.page-content</span>,
-<span class="hljs-selector-class">.page-sidebar</span> {
-  container: size layout style;
-  container-type: inline-size;
-}
-</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.page-content,<br>.page-sidebar</span> <span class="token punctuation">{</span><br>  <span class="token property">container</span><span class="token punctuation">:</span> size layout style<span class="token punctuation">;</span><br>  <span class="token property">container-type</span><span class="token punctuation">:</span> inline-size<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 <p>Disables content-based sizing</p>
 <p>* Spec still in WIP</p>
 
@@ -290,15 +254,7 @@ ro.unobserve(el)
         
           <section >
   <h4>2. Style Children</h4>
-<pre><code class="hljs language-css"><span class="hljs-selector-class">.widget</span> {
-  <span class="hljs-comment">/* narrow container: narrow version CSS */</span>
-}
-<span class="hljs-keyword">@container</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">480px</span>) {
-  <span class="hljs-selector-class">.widget</span> {
-    <span class="hljs-comment">/* wide container: wide version CSS */</span>
-  }
-}
-</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.widget</span> <span class="token punctuation">{</span><br>  <span class="token comment">/* narrow container: narrow version CSS */</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@container</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 480px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>  <span class="token selector">.widget</span> <span class="token punctuation">{</span><br>    <span class="token comment">/* wide container: wide version CSS */</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 
 </section>
 
@@ -317,21 +273,7 @@ ro.unobserve(el)
 
         
           <section >
-  <pre><code class="hljs language-css"><span class="hljs-selector-class">.page-content</span> {
-  container-type: inline-size;
-  container-name: main;
-}
-<span class="hljs-selector-class">.page-sidebar</span> {
-  container-type: inline-size;
-  container-name: sidebar;
-}
-<span class="hljs-keyword">@container</span> main (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">480px</span>) {
-  <span class="hljs-selector-class">.widget</span> { <span class="hljs-comment">/* wide `main` container */</span> }
-}
-<span class="hljs-keyword">@container</span> sidebar (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">480px</span>) {
-  <span class="hljs-selector-class">.widget</span> { <span class="hljs-comment">/* wide `sidebar` container */</span> }
-}
-</code></pre>
+  <pre class="language-css"><code class="language-css"><span class="token selector">.page-content</span> <span class="token punctuation">{</span><br>  <span class="token property">container-name</span><span class="token punctuation">:</span> main<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.page-content__gallery</span> <span class="token punctuation">{</span><br>  <span class="token property">container-name</span><span class="token punctuation">:</span> gallery<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@container</span> main <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 480px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>  <span class="token selector">.widget</span> <span class="token punctuation">{</span> <span class="token comment">/* wide `main` container */</span> <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@container</span> gallery <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 480px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>  <span class="token selector">.widget</span> <span class="token punctuation">{</span> <span class="token comment">/* wide `gallery` container */</span> <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 
 </section>
 
@@ -376,12 +318,6 @@ ro.unobserve(el)
 <li>Follow the csswg spec &amp; join the discussion</li>
 <li>Upvote browser implementation trackers as available</li>
 </ul>
-
-</section>
-
-        
-          <section >
-  <h2>Resources</h2>
 
 </section>
 

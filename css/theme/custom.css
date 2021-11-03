@@ -142,29 +142,42 @@ section.has-light-background, section.has-light-background h1, section.has-light
   vertical-align: middle;
   fill: currentColor;
 }
-.reveal .hljs-keyword, .reveal .hljs-built_in, .reveal .hljs-type, .reveal .hljs-literal, .reveal .hljs-number, .reveal .hljs-regexp, .reveal .hljs-string, .reveal .hljs-subst, .reveal .hljs-symbol, .reveal .hljs-class, .reveal .hljs-function, .reveal .hljs-title, .reveal .hljs-params, .reveal .hljs-name {
-  color: #17C37B;
-}
-.reveal .hljs-comment, .reveal .hljs-doctag, .reveal .hljs-meta, .reveal .hljs-meta-keyword, .reveal .hljs-meta-string {
-  color: rgba(255, 208, 7, 0.6);
-}
-.reveal .hljs-section, .reveal .hljs-tag, .reveal .hljs-builtin-name, .reveal .hljs-attribute, .reveal .hljs-variable {
-  color: rgba(255, 255, 255, 0.8);
-}
-.reveal .hljs-bullet, .reveal .hljs-code, .reveal .hljs-emphasis, .reveal .hljs-strong, .reveal .hljs-formula, .reveal .hljs-link, .reveal .hljs-quote, .reveal .hljs-attr {
-  color: rgba(23, 195, 123, 0.8);
-}
-.reveal .hljs-selector-tag, .reveal .hljs-selector-id, .reveal .hljs-selector-class, .reveal .hljs-selector-attr, .reveal .hljs-selector-pseudo {
-  color: rgba(255, 208, 7, 0.8);
-}
-.reveal .hljs-template-tag, .reveal .hljs-template-variable {
-  color: white;
-}
-.reveal .hljs-addition, .reveal .hljs-deletion {
+.reveal .token.comment, .reveal .token.prolog, .reveal .token.doctype, .reveal .token.cdata {
   color: rgba(23, 195, 123, 0.6);
 }
-.reveal .hljs-operator, .reveal .hljs-pattern-match, .reveal .hljs-typing, .reveal .hljs-constructor, .reveal .hljs-module-access, .reveal .hljs-module {
+.reveal .token.punctuation {
+  color: rgba(255, 255, 255, 0.6);
+}
+.reveal .token.property, .reveal .token.tag, .reveal .token.constant, .reveal .token.symbol, .reveal .token.deleted {
+  color: rgba(255, 255, 255, 0.8);
+}
+.reveal .token.number {
+  color: rgba(255, 208, 7, 0.8);
+}
+.reveal .token.boolean {
+  color: #fff;
+}
+.reveal .token.selector, .reveal .token.attr-name, .reveal .token.string, .reveal .token.char, .reveal .token.builtin, .reveal .token.inserted {
   color: #FFD007;
+}
+.reveal .token.operator, .reveal .token.entity, .reveal .token.url, .reveal .token.variable {
+  color: rgba(255, 255, 255, 0.6);
+}
+.reveal .token.atrule, .reveal .token.attr-value, .reveal .token.function, .reveal .token.class-name {
+  color: #17C37B;
+}
+.reveal .token.keyword {
+  color: rgba(255, 255, 255, 0.8);
+}
+.reveal .token.regex, .reveal .token.important {
+  color: rgba(23, 195, 123, 0.8);
+}
+.reveal .token.bold {
+  font-weight: bold;
+}
+.reveal .token.comment,
+.reveal .token.italic {
+  font-style: italic;
 }
 .reveal .colophon {
   display: flex;
@@ -240,28 +253,6 @@ section.has-light-background, section.has-light-background h1, section.has-light
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.reveal [data-src*=rNzVEGp],
-.reveal [data-src*=RwZPzJb],
-.reveal [data-src*=ExvPZjW] {
-  -webkit-animation: width 5s steps(4) infinite alternate;
-          animation: width 5s steps(4) infinite alternate;
-}
-@-webkit-keyframes width {
-  from {
-    width: 100vw;
-  }
-  to {
-    width: 30vw;
-  }
-}
-@keyframes width {
-  from {
-    width: 100vw;
-  }
-  to {
-    width: 30vw;
-  }
 }
 .reveal .noper {
   display: flex;
