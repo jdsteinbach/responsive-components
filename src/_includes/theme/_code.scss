@@ -1,87 +1,85 @@
-$selectors: (
-  General-purpose: (
-    keyword,
-    built_in,
-    type,
-    literal,
-    number,
-    regexp,
-    string,
-    subst,
-    symbol,
-    class,
-    function,
-    title,
-    params,
-    name,
-  ),
-  Meta: (
+$selector-groups: (
+  (
     comment,
-    doctag,
-    meta,
-    meta-keyword,
-    meta-string,
+    prolog,
+    doctype,
+    cdata,
   ),
-  Tags-attributes-configs: (
-    section,
+  (
+    punctuation,
+  ),
+  (
+    property,
     tag,
-    builtin-name,
-    attribute,
+    constant,
+    symbol,
+    deleted,
+  ),
+  (
+    number,
+  ),
+  (
+    boolean
+  ),
+  (
+    selector,
+    attr-name,
+    string,
+    char,
+    builtin,
+    inserted,
+  ),
+  (
+    operator,
+    entity,
+    url,
     variable,
   ),
-  Markup: (
-    bullet,
-    code,
-    emphasis,
-    strong,
-    formula,
-    link,
-    quote,
-    attr,
+  (
+    atrule,
+    attr-value,
+    function,
+    class-name,
   ),
-  CSS: (
-    selector-tag,
-    selector-id,
-    selector-class,
-    selector-attr,
-    selector-pseudo,
+  (
+    keyword,
   ),
-  Templates: (
-    template-tag,
-    template-variable,
-  ),
-  diff: (
-    addition,
-    deletion,
-  ),
-  ReasonML: (
-    operator,
-    pattern-match,
-    typing,
-    constructor,
-    module-access,
-    module,
+  (
+    regex,
+    important
   )
 );
 
 $selector-colors: (
-  General-purpose: $backgroundColor,
-  Meta: rgba($preColor, .6),
-  Tags-attributes-configs: rgba(#fff, .8),
-  Markup: rgba($backgroundColor, .8),
-  CSS: rgba($preColor, .8),
-  Templates: white,
-  diff: rgba($backgroundColor, .6),
-  ReasonML: $preColor
+  rgba($backgroundColor, .6),
+  rgba(#fff, .6),
+  rgba(#fff, .8),
+  rgba($preColor, .8),
+  #fff,
+  $preColor,
+  rgba(#fff, .6),
+  $backgroundColor,
+  rgba(#fff, .8),
+  rgba($backgroundColor, .8),
 );
 
-@each $category, $category-values in $selectors {
+@each $category-values in $selector-groups {
+  $nth: list.index($selector-groups, $category-values);
   $names: ();
   @each $selector in $category-values {
-    $names: append($names, ".hljs-#{$selector}", comma);
+    $names: append($names, ".token.#{$selector}", comma);
   }
 
   #{$names} {
-    color: map-get($selector-colors, $category);
+    color: list.nth($selector-colors, $nth);
   }
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.comment,
+.token.italic {
+  font-style: italic;
 }

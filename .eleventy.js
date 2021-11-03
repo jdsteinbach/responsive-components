@@ -1,21 +1,22 @@
-// Markdown
-const markdownIt = require('markdown-it')
-const markdownItHighlightJS = require('markdown-it-highlightjs')
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const markdownIt = require('markdown-it');
+// const markdownItHighlightJS = require('markdown-it-highlightjs')
+
 const mdOptions = {
   html: true,
   breaks: true,
   linkify: true,
   typographer: true
-}
+};
 
 const pathToInt = path => {
-  const ints = path.match(/\d+/g)
-  const fileValue = parseInt(ints.pop(), 10)
-  const folderValue = parseInt(ints.pop(), 10)
-  const pathInt = fileValue + folderValue * 1000
+  const ints = path.match(/\d+/g);
+  const fileValue = parseInt(ints.pop(), 10);
+  const folderValue = parseInt(ints.pop(), 10);
+  const pathInt = fileValue + folderValue * 1000;
 
-  return pathInt
-}
+  return pathInt;
+};
 
 module.exports = eleventyConfig => {
   eleventyConfig.addCollection('slides', collection => {
@@ -49,7 +50,12 @@ module.exports = eleventyConfig => {
     return keys.join(' ');
   });
 
-  eleventyConfig.setLibrary('md', markdownIt(mdOptions).use(markdownItHighlightJS));
+  eleventyConfig.setLibrary('md', markdownIt(mdOptions));
+    // .use(markdownItHighlightJS));
+
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    templateFormats: ['md', 'html']
+  });
 
   eleventyConfig.addPassthroughCopy({
     './node_modules/reveal.js/css/': 'css',
@@ -58,7 +64,7 @@ module.exports = eleventyConfig => {
   });
   eleventyConfig.addPassthroughCopy('src/images');
 
-  eleventyConfig.addWatchTarget('./src/_includes/theme/**/*.scss')
+  eleventyConfig.addWatchTarget('./src/_includes/theme/**/*.scss');
 
   return {
     templateFormats: [
