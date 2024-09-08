@@ -4,7 +4,7 @@
   align-items: center;
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: 0;
   left: 20px;
   z-index: 1;
 
@@ -17,19 +17,27 @@
 
 .colophon__logo {
   width: 15vw;
+  opacity: 0;
 
   svg {
-    height: 8vh;
-    width: auto;
-    fill: $mainColor;
+    height: auto;
+    width: 100%;
+    display: block;
   }
 }
 
 .colophon__link {
-  padding: .5em 1em .7em;
+  padding: .4em 1em .6em;
   opacity: .75;
   font-family: $codeFont;
   font-style: italic;
   font-size: math.div(1em, 1.5);
   background-color: $backgroundColor;
+
+  @supports (font-variation-settings: initial) {
+    --slnt: -12;
+    --MONO: 1;
+
+    font-style: normal;
+  }
 }

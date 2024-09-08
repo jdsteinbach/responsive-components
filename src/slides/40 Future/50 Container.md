@@ -1,9 +1,7 @@
 #### 1. Create a Container
 
 ```css
-.page-content,
-.page-sidebar {
-  container: size layout style;
+.page-content {
   container-type: inline-size;
 }
 ```

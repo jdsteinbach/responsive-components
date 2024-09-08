@@ -1,0 +1,19 @@
+@mixin v-fonts($family, $file-name, $format, $style: false, $weight: false) {
+  @font-face {
+    font-family: $family;
+    src: url('../../fonts/#{$file-name}') format('#{$format}');
+    @if $style {
+      font-style: $style;
+    }
+    @if $weight {
+      font-weight: $weight;
+    }
+  }
+}
+
+@include v-fonts(
+  Recursive,
+  "recursive-subset.woff2",
+  woff2-variations,
+  $weight: 300 900
+);

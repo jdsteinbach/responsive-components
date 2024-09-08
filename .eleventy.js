@@ -63,6 +63,7 @@ module.exports = eleventyConfig => {
     './node_modules/reveal.js/plugin/': 'plugin'
   });
   eleventyConfig.addPassthroughCopy('src/images');
+  eleventyConfig.addPassthroughCopy('src/fonts');
 
   eleventyConfig.addWatchTarget('./src/_includes/theme/**/*.scss');
 

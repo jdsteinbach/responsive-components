@@ -5,10 +5,10 @@
 .page-content__gallery {
   container-name: gallery;
 }
-@container main (min-width: 480px) {
+@container main size(min-width: 480px) {
   .widget { /* wide `main` container */ }
 }
-@container gallery (min-width: 480px) {
+@container gallery size(min-width: 480px) {
   .widget { /* wide `gallery` container */ }
 }
 ```

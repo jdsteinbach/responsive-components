@@ -13,6 +13,8 @@
 @import "../template/settings";
 // ---------------------------------------------
 
+@import "fonts";
+
 
 // Solarized colors
 $base03:    #002b36;
@@ -34,28 +36,30 @@ $green:     #859900;
 
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #17C37B;
+$backgroundColor: #ebecf0;
+$backgroundColorAlt: #dac935;
 
-$mainColor: #112378;
-$headingColor: $mainColor;
+$mainColor: #2c313e;
+$headingColor: #60569c;
 
-$preColor: #FFD007;
+$preColor: #5c6443;
+$preColorLight: #dac935;
 
-$mainFontSize: 40px;
-$mainFont: 'canada-type-gibson', Helvetica, sans-serif;
-$headingFont: 'mono45-headline', Helvetica, sans-serif;
+$mainFontSize: 32px;
+$mainFont: Recursive, Helvetica, sans-serif;
+$headingFont: Recursive, Helvetica, sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 700;
-$linkColor: #112378;
-$linkColorHover: #0033FF;
+$linkColor: #5c6443;
+$linkColorHover: #60569c;
 $selectionBackgroundColor: lighten($linkColor, 25%);
-$codeFont: 'ibm-plex-mono', Operator Mono, monospace;
+$codeFont: Recursive, Operator Mono, monospace;
 
 $heading1Size: 3.6em;
-$heading2Size: 2.4em;
-$heading3Size: 2em;
+$heading2Size: 2.6em;
+$heading3Size: 1.6em;
 $heading4Size: 1.6em;
 $heading5Size: 1em;
 $heading6Size: 1em;
@@ -71,28 +75,54 @@ section.has-light-background {
 }
 
 .reveal {
+  * {
+    font-variation-settings:
+      "MONO" var(--MONO, 0),
+      "CASL" var(--CASL, 0),
+      "CRSV" var(--CRSV, 0),
+      "wght" var(--wght, 400),
+      "slnt" var(--slnt, 0);
+    font-feature-settings:
+      "liga" var(--liga, 1),
+      "kern" var(--kern, 1);
+  }
+
   section {
+    h1 {
+      --wght: 900;
+      --CASL: .67;
+
+      font-weight: 900;
+    }
+
     h2, h3, h4, h5, h6 {
+      --wght: 800;
+      --CASL: .33;
+
       margin-right: auto;
       margin-left: auto;
       max-width: 60rem;
+      text-transform: none;
       font-weight: 800;
 
       + p,
-      + ul {
+      + ul,
+      + div {
         margin-top: $heading5Size;
       }
     }
 
-    h2, h4, h6 {
-      font-family: $codeFont;
-      text-transform: none;
-    }
-
     h2 + h3 {
+      --wght: 600;
+
       font-family: $mainFont;
       text-transform: none;
-      font-weight: 400;
+      font-weight: 600;
+      color: $mainColor;
+    }
+
+    h3 {
+      --CRSV: 1;
     }
 
     h3:first-child:last-child {
@@ -111,7 +141,13 @@ section.has-light-background {
     h1, h2, h3, h4, h5, h6 {
       em {
         font-style: italic;
-        border-bottom: .125em solid currentColor;
+
+        @supports (font-variation-settings: initial) {
+          --CRSV: 1;
+          --slnt: -12;
+
+          font-style: normal;
+        }
       }
     }
 
@@ -124,31 +160,41 @@ section.has-light-background {
     }
 
     code {
-      font-size: 0.9em;
+      --MONO: 1;
+      --CASL: 0;
+      --CRSV: 0;
+
+      padding: 0 .25ch;
+      background-color: rgba($linkColor, .15);
     }
 
     pre {
       display: inline-block;
       width: auto;
-      padding: 1ch;
-      border-radius: .25ch;
+      padding: 0;
       box-sizing: border-box;
-      background-color: $mainColor;
-      color: $preColor;
+      box-shadow: none;
+      background: transparent;
+      color: $preColorLight;
 
       code {
+        padding: 1ch;
         max-height: 100%;
         box-sizing: border-box;
-        font-size:  math.div($mainFontSize, 1.2);
-        line-height: 1.2;
+        font-size: $mainFontSize * .85;
+        line-height: 1.4;
+        border-radius: .25ch;
+        background: $mainColor;
         overflow-x: scroll;
         overflow-y: visible;
       }
 
       mark {
+        --wght: 800;
+
         padding: 0 .25em;
         font-weight: 800;
-        color: #fff;
+        color: $mainColor;
         background-color: rgba(#000, .2);
       }
     }
@@ -162,6 +208,7 @@ section.has-light-background {
       padding: 0;
       border-radius: 0;
       box-shadow: 0 0 0 50vmax $mainColor;
+      background: $mainColor;
     }
 
     ul,
@@ -171,10 +218,20 @@ section.has-light-background {
       max-width: 45rem;
     }
 
+    li {
+      --CASL: .33;
+      --CRSV: 1;
+
+      margin-top: math.div($mainFontSize, 2);
+    }
+
     p {
+      --CASL: .33;
+      --CRSV: 1;
+
       margin-right: auto;
       margin-left: auto;
-      max-width: 45rem;
+      width: 45rem;
 
       &:first-child:last-child {
         font-size: $heading3Size;
@@ -182,17 +239,73 @@ section.has-light-background {
     }
 
     blockquote {
+      --slnt: 0;
+      --CASL: .5;
+      --CRSV: 1;
+
       padding: $heading3Size;
       background-color: $preColor;
       box-shadow: none;
+
+      > p {
+        --wght: 300;
+
+        font-size: $heading3Size;
+
+        br {
+          display: block;
+          font-size: 1.5rem;
+        }
+      }
+
+      cite {
+        --slnt: 1;
+        --CASL: 0;
+        --CRSV: 0;
+        --wght: 400;
+
+        display: block;
+        font-style: italic;
+        font-size: $mainFontSize;
+
+        &::before {
+          content: "~ ";
+        }
+      }
+
+      strong {
+        --slnt: -15;
+
+        font-size: .85em;
+      }
     }
 
     i, em {
       font-style: italic;
+
+      @supports (font-variation-settings: initial) {
+        --CRSV: 1;
+        --slnt: -12;
+
+        font-style: normal;
+      }
     }
 
     b, strong {
       font-weight: bold;
+
+      @supports (font-variation-settings: initial) {
+        --wght: 800;
+      }
+    }
+
+    th {
+      font-weight: bold;
+      font-style: normal;
+
+      @supports (font-variation-settings: initial) {
+        --wght: 800;
+      }
     }
 
     .sr-only {
@@ -220,6 +333,12 @@ section.has-light-background {
     .link__icon {
       width: 0.8em;
       height: 0.8em;
+    }
+
+    .complexity {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15ch, 1fr));
+      gap: 2rem 1rem;
     }
   }
 

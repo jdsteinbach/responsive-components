@@ -52,14 +52,14 @@ $selector-groups: (
 
 $selector-colors: (
   rgba($backgroundColor, .6),
-  rgba(#fff, .6),
-  rgba(#fff, .8),
-  rgba($preColor, .8),
-  #fff,
-  $preColor,
-  rgba(#fff, .6),
+  rgba($preColorLight, .6),
+  rgba($backgroundColor, .8),
+  rgba($preColorLight, .8),
+  $preColorLight,
+  $preColorLight,
+  rgba($preColorLight, .6),
   $backgroundColor,
-  rgba(#fff, .8),
+  rgba($preColorLight, .8),
   rgba($backgroundColor, .8),
 );
 
